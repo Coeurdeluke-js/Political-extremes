@@ -1,3 +1,9 @@
+/* Add this new rule */
+body {
+    overflow-y: auto !important; /* Force vertical scrollbar to be shown */
+    padding-right: 0 !important; /* Prevent padding shifts */
+}
+
 body.dark-mode {
     background-color: #121212;
     color: #fafafa;
@@ -12,6 +18,8 @@ body.presentation-active {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
+    position: relative; /* Add this */
+    overflow-x: hidden; /* Add this to prevent horizontal scrolling */
 }
 
 h2, h3 {
@@ -266,6 +274,112 @@ h2, h3 {
     opacity: 1;
 }
 
+/* Language toggle button styling */
+.language-toggle {
+    position: absolute; /* Change from fixed to absolute */
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#language-toggle-btn {
+    display: flex;
+    align-items: center;
+    background-color: rgba(18, 18, 18, 0.8);
+    border: none;
+    border-radius: 20px;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fafafa;
+}
+
+#language-toggle-btn:hover {
+    background-color: rgba(236, 77, 88, 0.2);
+    transform: scale(1.05);
+}
+
+.flag-icon {
+    width: 24px;
+    height: 16px;
+    margin-right: 8px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Active flag has a red border */
+.active-flag {
+    border: 2px solid #ec4d58;
+}
+
+/* Inactive flag has a gray filter */
+.inactive-flag {
+    filter: grayscale(100%) brightness(70%);
+    opacity: 0.6;
+}
+
+/* Animation for flag change */
+@keyframes flagChange {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.8); }
+    100% { transform: scale(1); }
+}
+
+.flag-change {
+    animation: flagChange 0.5s ease;
+}
+
+/* For small screens */
+@media only screen and (max-width: 600px) {
+    .language-toggle {
+        top: 10px;
+        right: 10px;
+    }
+    
+    #language-toggle-btn {
+        padding: 4px 8px;
+    }
+    
+    .flag-icon {
+        width: 20px;
+        height: 14px;
+        margin-right: 4px;
+    }
+}
+
+/* Animation for flag change */
+@keyframes flagChange {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.8); }
+    100% { transform: scale(1); }
+}
+
+.flag-change {
+    animation: flagChange 0.5s ease;
+}
+
+/* For small screens */
+@media only screen and (max-width: 600px) {
+    .language-toggle {
+        top: 10px;
+        right: 10px;
+    }
+    
+    #language-toggle-btn {
+        padding: 4px 8px;
+    }
+    
+    .flag-icon {
+        width: 20px;
+        height: 14px;
+        margin-right: 4px;
+    }
+    
+    #language-text {
+        font-size: 12px;
+    }
+}
+
 /* Media Queries for Responsiveness */
 
 @media only screen and (max-width: 768px) {
@@ -344,7 +458,7 @@ h2, h3 {
     .container {
         padding: 30px;
     }
-    
+
     .left-wing, .right-wing {
         width: calc(50% - 20px);
     }
