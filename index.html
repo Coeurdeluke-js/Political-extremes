@@ -12,96 +12,107 @@
     <link rel="icon" href="logo.ico" type="image/x-icon">
 </head>
 <body class="dark-mode">
+
+    <!-- Replace your current language-toggle div with this clean version -->
+    <div class="language-toggle">
+       <button id="language-toggle-btn" aria-label="Toggle Language">
+           <img src="uk.png" alt="English" id="language-flag" class="flag-icon active-flag">
+           <img src="arg.png" alt="Español" id="inactive-language-flag" class="flag-icon inactive-flag">
+       </button>
+    <div>
+
+
+    <div class="presentation-popup" id="presentation-popup">
+        <div class="presentation-content">
+            <h1 data-translate="presentation-title">Understanding <span class="red-text">Political</span> <spanclass="red-text">Extremes</span>, A <span class="red-text">Galaxy</span> Far Away...</h1>
+            <img src="logo.png" alt="Project Logo" class="presentation-logo">
+            <img src="words.png" alt="Words" class="presentation-words">
+        </div>
+    </div>
+
     <div class="container">
         <section class="overview">
-            <h2>Understanding Political Extremes, A Galaxy Far, Far Away...</h2>
-            <p>
+            <h2 data-translate="overview-title">Understanding Political Extremes, A Galaxy Far, Far Away...</h2>
+            <p data-translate="overview-text">
                 explores the edges of the political spectrum. On one side, we have the 'far-left,' which pushes for big changes to make society more equal. On the other, the 'far-right' wants to keep things traditional, often with a strong leader. Both want big changes, but they have very different ideas about what those changes should be. Think of Darth Vader – he shows us how power can be used in extreme ways, something we see more often on the far-right, even though both sides can have leaders who want total control. We'll keep it simple, no complicated terms, so everyone can understand.
             </p>        
         </section>
 
         <section class="comparison">
             <div class="left-wing">
-                <h3>The Far-Left: Power to the People?</h3>
-                <p>
+                <h3 data-translate="left-title">The Far-Left: Power to the People?</h3>
+                <p data-translate="left-p1">
                     The far-left is all about making society truly equal. They believe that everyone should have the same opportunities and that no one group should have more power than another. This means breaking down the old ways of doing things, like how wealth and power are spread out.
                 </p>
-                <p>
+                <p data-translate="left-p2">
                     They often push for things like everyone owning important resources together, instead of just a few rich people. They want to take wealth from the very rich and share it more fairly.
                 </p>
-                <p>
+                <p data-translate="left-p3">
                     The far-left isn't afraid of big changes. They want to challenge old ideas about how society should work, especially when those ideas keep some people down.
                 </p>
-                <p>
+                <p data-translate="left-p4">
                     Sometimes, they believe that the only way to make these changes is through big, even revolutionary, actions. They might think that the current system is so broken that it needs to be completely replaced.
                 </p>
             </div>
-
+        
             <div class="right-wing">
-                <h3>The Far-Right: Order and Authority?</h3>
-                <p>
+                <h3 data-translate="right-title">The Far-Right: Order and Authority?</h3>
+                <p data-translate="right-p1">
                     The far-right focuses on the idea of a strong nation, sticking to old traditions, and keeping things orderly. They believe in the importance of national pride and often want to go back to a time when things were supposedly simpler and better.
                 </p>
-                <p>
+                <p data-translate="right-p2">
                     They tend to favor a powerful central government and clear social ranks. They think that someone needs to be in charge to keep things stable and that everyone should know their place.
                 </p>
-                <p>
+                <p data-translate="right-p3">
                     Often, they support policies that exclude people who are seen as different, like immigrants or minority groups. They might believe that these groups threaten the nation's identity or stability.
                 </p>
-                <p>
+                <p data-translate="right-p4">
                     There's a risk that this focus on order and authority can lead to authoritarianism, where the government has too much power and silences anyone who disagrees. They might suppress protests or limit freedom of speech.
                 </p>
             </div>
         </section>
 
-        <div class="presentation-popup" id="presentation-popup">
-            <div class="presentation-content">
-                <h1>Understanding <span class="red-text">Political</span> <span class="red-text">Extremes</span>, A <span class="red-text">Galaxy</span> Far Away...</h1>
-                <img src="logo.png" alt="Project Logo" class="presentation-logo">
-                <img src="words.png" alt="Words" class="presentation-words">
-            </div>
-        </div>
-        
+
         <section class="interactive">
             <div class="carousel">
                 <div class="scenario" id="scenario1">
                     <img src="1-galactic-economy.png" alt="Scenario Image">
-                    <p class="description">The Galactic Empire faces economic challenges. Darth Vader must decide how to allocate resources.</p>
+                    <p class="description" data-translate="scenario1-desc">The Galactic Empire faces economic challenges. Darth Vader must decide how to allocate resources.</p>
                     <div class="buttons">
-                        <button class="left-button" data-choice="left" data-scenario="1">Left-Wing Policies</button>
-                        <button class="right-button" data-choice="right" data-scenario="1">Right-Wing Policies</button>
+                        <button class="left-button" data-choice="left" data-scenario="1" data-translate="left-button">Left-Wing Policies</button>
+                        <button class="right-button" data-choice="right" data-scenario="1" data-translate="right-button">Right-Wing Policies</button>
                     </div>
                 </div>
         
                 <div class="scenario" id="scenario2" style="display: none;">
                     <img src="2-rebel-alliance.png" alt="Scenario Image">
-                    <p class="description">A rebellion threatens the stability of the Empire. How should Darth Vader respond?</p>
+                    <p class="description" data-translate="scenario2-desc" >A rebellion threatens the stability of the Empire. How should Darth Vader respond?</p>
                     <div class="buttons">
-                        <button class="left-button" data-choice="left" data-scenario="2">Left-Wing Policies</button>
-                        <button class="right-button" data-choice="right" data-scenario="2">Right-Wing Policies</button>
+                        <button class="left-button" data-choice="left" data-scenario="1" data-translate="left-button">Left-Wing Policies</button>
+                        <button class="right-button" data-choice="right" data-scenario="1" data-translate="right-button">Right-Wing Policies</button>
                     </div>
                 </div>
         
                 <div class="scenario" id="scenario3" style="display: none;">
                     <img src="3-cultural-values.png" alt="Scenario Image">
-                    <p class="description">The Empire is home to many different cultures and species. How should Darth Vader manage this diversity?</p>
+                    <p class="description" data-translate="scenario3-desc">The Empire is home to many different cultures and species. How should Darth Vader manage this diversity?</p>
                     <div class="buttons">
-                        <button class="left-button" data-choice="left" data-scenario="3">Left-Wing Policies</button>
-                        <button class="right-button" data-choice="right" data-scenario="3">Right-Wing Policies</button>
+                        <button class="left-button" data-choice="left" data-scenario="1" data-translate="left-button">Left-Wing Policies</button>
+                        <button class="right-button" data-choice="right" data-scenario="1" data-translate="right-button">Right-Wing Policies</button>
                     </div>
-                </div>
             </div>
         
             <div class="popup" id="popup">
                 <div class="popup-content">
                     <p id="popup-title"></p>
                     <p id="popup-message"></p>
-                    <button id="popup-close">Close</button>
+                    <button id="popup-close" data-translate="close-button">Close</button>
                 </div>
             </div>
         </section>
     </div>
 
     <script src="script.js"></script>
+    <script src="spanish.js"></script>
 </body>
 </html>
