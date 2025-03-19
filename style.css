@@ -1,0 +1,402 @@
+body.dark-mode {
+    background-color: #121212;
+    color: #fafafa;
+    font-family: 'Exo 2', sans-serif;
+}
+
+body.presentation-active {
+    overflow: hidden; /* Prevent scrolling during presentation */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+h2, h3 {
+    color: #ec4d58;
+    text-align: center;
+}   
+
+/* Center h1 tag */
+.presentation-content h1 {
+    color: #fafafa;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 5.3rem;
+}
+
+.comparison {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.left-wing, .right-wing {
+    width: calc(50% - 20px);
+    padding: 15px;
+    border: 2px solid #ec4d58;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.interactive .scenario {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Apply transition ONLY to images in interactive section */
+.interactive img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(236, 77, 88, 0.2);
+}
+
+.interactive .scenario.active img {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Remove transition from text and buttons */
+.interactive .description, 
+.interactive .buttons {
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+.interactive .buttons button {
+    background-color: #ec4d58;
+    color: #fafafa;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.interactive .buttons button:hover {
+    transform: scale(1.05);
+    background-color: #d63d49;
+}
+
+.interactive .result {
+    margin-top: 10px;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.carousel .scenario {
+    width: 100%;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ec4d58;
+    color: #fafafa;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1002;
+}
+
+.popup-content {
+    background-color: #121212;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.popup.show {
+    opacity: 1;
+}
+
+.popup.show .popup-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.popup.hide {
+    opacity: 0;
+}
+
+.popup.hide .popup-content {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+#popup-close {
+    background-color: #ec4d58;
+    color: #fafafa;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#popup-close:hover {
+    transform: scale(1.1);
+    background-color: #d63d49;
+}
+
+.presentation-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1001;
+}
+
+.presentation-popup.show {
+    opacity: 1;
+}
+
+.presentation-popup.hide {
+    opacity: 0;
+}
+
+/* Center the presentation content */
+.presentation-content {
+    text-align: center;
+    color: #fafafa;
+    font-size: 2.5em;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.red-text {
+    color: #ec4d58;
+}
+
+.presentation-content.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.presentation-content.hide {
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+.presentation-logo {
+    max-width: 200px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.presentation-logo.show {
+    opacity: 1;
+}
+
+.presentation-words {
+    max-width: 200px;
+    margin-top: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    display: block;
+}
+
+.presentation-words.show {
+    opacity: 1;
+}
+
+/* Media Queries for Responsiveness */
+
+@media only screen and (max-width: 768px) {
+    .comparison {
+        flex-direction: column;
+    }
+    
+    .left-wing, .right-wing {
+        width: 100%;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .comparison {
+        flex-direction: column;
+    }
+    
+    .left-wing, .right-wing {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .presentation-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .presentation-logo, .presentation-words {
+        max-width: 150px;
+    }
+    
+    .interactive .buttons button {
+        padding: 8px 15px;
+        font-size: 14px;
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .left-wing, .right-wing {
+        width: 100%;
+    }
+    
+    .presentation-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .presentation-logo, .presentation-words {
+        max-width: 180px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .left-wing, .right-wing {
+        width: 48%;
+    }
+    
+    .presentation-content h1 {
+        font-size: 2rem;
+    }
+    .left-wing, .right-wing {
+        width: calc(50% - 20px);
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .container {
+        padding: 30px;
+    }
+    
+    .left-wing, .right-wing {
+        width: calc(50% - 20px);
+    }
+}
+
+/* For very small screens */
+@media only screen and (max-width: 400px) {
+    .presentation-content h1 {
+        font-size: 1.2rem;
+    }
+    
+    .presentation-logo, .presentation-words {
+        max-width: 120px;
+    }
+    
+    h2, h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    body.dark-mode {
+        background-color: white;
+        color: black;
+    }
+    
+    .interactive, .popup, .presentation-popup {
+        display: none;
+    }
+}
+
+/* For high-resolution displays */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi) {
+    /* Optimize images for high-res displays if needed */
+}
+
+/* Landscape orientation adjustments */
+@media only screen and (orientation: landscape) and (max-height: 500px) {
+    .presentation-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .presentation-content h1 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .presentation-logo, .presentation-words {
+        margin: 0 15px;
+    }
+}
