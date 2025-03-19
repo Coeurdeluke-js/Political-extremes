@@ -183,3 +183,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start the presentation after a short delay to ensure DOM is fully loaded
     setTimeout(showPresentation, 100);
 });
+
